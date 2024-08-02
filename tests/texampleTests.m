@@ -20,11 +20,15 @@ classdef texampleTests < matlab.unittest.TestCase
             capture = false; % run in capture or replay mode, cf. recordings/README.md
 
             if capture
-                testCase.applyFixture(PathFixture( ...
-                    fullfile(testCase.TestDir,"recording-doubles")));
+                pf = PathFixture( ...
+                    fullfile(testCase.TestDir, "recording-doubles")));
+                disp(pf);
+                testCase.applyFixture(pf);
             else
-                testCase.applyFixture(PathFixture( ...
-                    fullfile(testCase.TestDir,"replaying-doubles")));
+                pf = PathFixture( ...
+                    fullfile(testCase.TestDir, "replaying-doubles")));
+                disp(pf);
+                testCase.applyFixture(pf);
             end
 
             import matlab.unittest.fixtures.CurrentFolderFixture
