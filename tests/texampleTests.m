@@ -21,12 +21,12 @@ classdef texampleTests < matlab.unittest.TestCase
 
             if capture
                 pf = PathFixture( ...
-                    fullfile(testCase.TestDir, "recording-doubles")));
+                    fullfile(testCase.TestDir, "recording-doubles"));
                 disp(pf);
                 testCase.applyFixture(pf);
             else
                 pf = PathFixture( ...
-                    fullfile(testCase.TestDir, "replaying-doubles")));
+                    fullfile(testCase.TestDir, "replaying-doubles"));
                 disp(pf);
                 testCase.applyFixture(pf);
             end
